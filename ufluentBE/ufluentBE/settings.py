@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'ufluentBE.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ufluentBE',
+        'NAME': 'ufluent',
         'USER': 'tom',
         'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': '8080',
+        'PORT': '',
     }
 }
 
