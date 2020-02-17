@@ -1,7 +1,7 @@
 [
   {
     "model": "schema.Pictures",
-    "pictureId": 1,
+    "pk": 1,
     "fields": {
       "pictureData": "test",
       "word": "hello"
@@ -9,7 +9,7 @@
   },
   {
     "model": "schema.Pictures",
-    "pictureId": 2,
+    "pk": 2,
     "fields": {
       "pictureData": "test1",
       "word": "hello1"
@@ -18,7 +18,7 @@
 
   {
     "model": "schema.Pictures",
-    "pictureId": 3,
+    "pk": 3,
     "fields": {
       "pictureData": "test2",
       "word": "hello2"
@@ -26,7 +26,7 @@
   },
   {
     "model": "schema.Users",
-    "username": "aaaaa",
+    "pk": "aaaaa",
     "fields": {
       "avatarUrl": "test4",
       "language": "hola",
@@ -36,22 +36,22 @@
   },
   {
     "model": "schema.Users",
-    "username": "bbbbb",
+    "pk": "bbbbb",
     "fields": {
       "avatarUrl": "test3",
       "language": "hola",
       "score": 0,
-      "img": 1
+      "img": 2
     }
   },
   {
     "model": "schema.Users",
-    "username": "ccccc",
+    "pk": "ccccc",
     "fields": {
       "avatarUrl": "test3",
       "language": "hola",
       "score": 0,
-      "img": 1
+      "img": 3
     }
   }
 ]

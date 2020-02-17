@@ -79,16 +79,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ufluent',
-        'USER': 'tom',
-        'PASSWORD': 'password',
+        'USER': 'carlos',
+        'PASSWORD': 'Yosipuedo30988',
         'HOST': 'localhost',
         'PORT': '',
     },
     'test':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ufluent_test',
-        'USER': 'tom',
-        'PASSWORD': 'password',
+        'USER': 'carlos',
+        'PASSWORD': 'Yosipuedo30988',
         'HOST': 'localhost',
         'PORT': '',
     }
