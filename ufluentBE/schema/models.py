@@ -12,4 +12,4 @@ class Users(models.Model):
   avatarUrl = models.CharField(max_length=255, default="https://www.kindpng.com/picc/m/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png")
   language = models.CharField(max_length=50, default="english")
   score = models.IntegerField(default=0)
-  img = models.OneToOneField(Pictures, on_delete=models.CASCADE)
+  img = models.ForeignKey(Pictures, on_delete=models.CASCADE)
