@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS ufluent;
+
+DROP DATABASE IF EXISTS ufluent_test;
+
+CREATE DATABASE ufluent;
+
+CREATE DATABASE ufluent_test;
