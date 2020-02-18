@@ -19,5 +19,8 @@ from server import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^users/(?P<username>\w+)/$', views.userByUsername)
+    re_path(r'^users/(?P<username>\w+)/$', views.userByUsername),
+    path('picture/<slug:pictureById>',views.getPictureById),
+    path('picture',views.postPicture)
+
 ]
