@@ -2,6 +2,8 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
+from django_add_default_value import AddDefaultValue
+
 
 
 class Migration(migrations.Migration):
@@ -21,4 +23,14 @@ class Migration(migrations.Migration):
                 ('imgCount', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='schema.Pictures')),
             ],
         ),
+         AddDefaultValue(
+            model_name='Users',
+            name='score', 
+            value=0
+        ),
+        AddDefaultValue(
+            model_name='Users',
+            name='imgCount_id', 
+            value=1
+        )
     ]
