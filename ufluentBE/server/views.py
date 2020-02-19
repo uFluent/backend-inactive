@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 # Create your views here.
 
 from django.http import JsonResponse, HttpResponse
@@ -15,6 +14,7 @@ import numpy as np
 from binascii import a2b_base64
 import os.path
 from PIL import Image
+import re, json
 
 
 @csrf_exempt
