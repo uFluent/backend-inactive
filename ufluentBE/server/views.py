@@ -160,3 +160,35 @@ def postPicture(request):
     return JsonResponse({'outcome': str(outcome)})
   except Exception as err:
       return JsonResponse({'err': 'Error occured. Please try again'},status='400')
+  
+def postByUsername(request):
+    jsonRequestData = json.loads(request.body)
+    if request.method == 'POST':
+        try:
+
+            connection = psycopg2.connect(
+                user='mustafa', password='password123', database='ufluent_test')
+            cursor = connection.cursor()
+            users = Table('schema_users')
+            postUser = Query.into(users).columns('username', 'language').insert(jsonRequestData['username'], jsonRequestData['language']
+                                                                                )
+            try:
+                cursor.execute(str(postUser))
+                print(str(postUser))
+            except(Exception, psycopg2.IntegrityError)as error:
+                cursor.execute("ROLLBACK;")
+                print(error)
+            else:
+                cursor.execute("COMMIT;")
+                print(request.body)
+                # userData = cursor.execute(str(postUser))
+            return JsonResponse({'user': 1})
+        except (Exception, psycopg2.Error) as error:
+            print('Error occured ---->', error)
+            # return JsonResponse({'error':error})
+            return HttpResponse("<html><body>Error $s</body></html>")
+        finally:
+            if(connection):
+                cursor.close()
+                connection.close()
+                print('db connection closed.')
