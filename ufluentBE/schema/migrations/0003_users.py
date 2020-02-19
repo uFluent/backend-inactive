@@ -5,7 +5,6 @@ import django.db.models.deletion
 from django_add_default_value import AddDefaultValue
 
 
-
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -16,21 +15,33 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Users',
             fields=[
-                ('username', models.CharField(max_length=50, primary_key=True, serialize=False)),
-                ('avatarUrl', models.CharField(default='https://www.kindpng.com/picc/m/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png', max_length=255)),
+                ('username', models.CharField(
+                    max_length=50, primary_key=True, serialize=False)),
+                ('avatarUrl', models.CharField(
+                    default='https://www.kindpng.com/picc/m/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png', max_length=255)),
                 ('language', models.CharField(default='english', max_length=50)),
                 ('score', models.IntegerField(default=0)),
-                ('imgCount', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='schema.Pictures')),
+                ('imgCount', models.OneToOneField(
+                    on_delete=django.db.models.deletion.CASCADE, to='schema.Pictures')),
             ],
-        ),
-         AddDefaultValue(
-            model_name='Users',
-            name='score', 
-            value=0
         ),
         AddDefaultValue(
             model_name='Users',
-            name='imgCount_id', 
-            value=1
+            name='score', value=0
+
+        ),
+        AddDefaultValue(
+            model_name='Users',
+            name='imgCount_id', value=1
+        ),
+        AddDefaultValue(
+            model_name='Users',
+            name='avatarUrl', value='https://www.kindpng.com/picc/m/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png'
+
+        ),
+        AddDefaultValue(
+            model_name='Users',
+            name='language', value='english'
+
         )
     ]
