@@ -63,7 +63,7 @@ def postPicture(request):
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
     preds = model.predict(x)
-    outcome = decode_predictions(preds, top=1)[0][0][1]
+    outcome = decode_predictions(preeds, top=1)[0][0][1]
     return JsonResponse({'outcome': str(outcome)})
   except Exception as err:
-      return JsonResponse({'err': 'Error occured. Please try again'})
+      return JsonResponse({'err': 'Error occured. Please try again'},status='400')
