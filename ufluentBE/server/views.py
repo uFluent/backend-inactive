@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import JsonResponse, HttpResponse
-
+import os
 from django.views.decorators.csrf import csrf_exempt
 import psycopg2
 from pypika import Query, Table
@@ -16,10 +16,17 @@ import os.path
 from PIL import Image
 import re, json
 
+env = os.environ.get("PYTHON_ENV")
 
 @csrf_exempt
 def selectUserByUsername(request,username):
   try:
+    if env == "test":
+        connStr = "user='tom' password='password' database='ufluent_test'"
+    elif env == "dev":
+        connStr = "user='tom' password='password' database='ufluent'"
+    else:
+        connStr = "host='HEROKUHOST'"
     connection = psycopg2.connect(user='tom',password='password',database='ufluent_test')
     cursor = connection.cursor()
     users = Table('schema_users')
